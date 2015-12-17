@@ -1,6 +1,6 @@
-FROM java:8-jdk
+FROM montge/centos-java8
 
-RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
+RUN yum update && yum install -y wget git curl zip && yum clean all
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
